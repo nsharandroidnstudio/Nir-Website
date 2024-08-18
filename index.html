@@ -14,6 +14,9 @@
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
             --accent-color: #80a8f9;
+            --ai-color: #f39c12;
+            --programming-color: #2ecc71;
+            --other-color: #e74c3c;
             --text-color: #0b0a0a;
             --bg-color: #f4f4f4;
         }
@@ -126,21 +129,34 @@
         }
 
         .skill {
-            background-color: var(--primary-color);
             color: #fff;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.9em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .skill:hover {
-            background-color: var(--accent-color);
             transform: scale(1.05);
+        }
+
+        .skill-ai {
+            background-color: var(--ai-color);
+        }
+
+        .skill-programming {
+            background-color: var(--programming-color);
+        }
+
+        .skill-other {
+            background-color: var(--other-color);
         }
 
         .highlight {
             background-color: var(--accent-color);
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
 
         .icon {
@@ -167,6 +183,27 @@
             main {
                 grid-template-columns: 1fr;
             }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .skills {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -185,7 +222,7 @@
         <main>
             <section>
                 <h2><i class="fas fa-user icon"></i>Summary</h2>
-                <p>Motivated and accomplished individual with a diverse background in technology, <span class="highlight">particularly in the realm of artificial intelligence</span>. Nearing completion of a Computer Science degree at Reichman University, with a strong foundation from military service in the Cyber and Signal Intelligence unit of the Israeli police. Eager to leverage skills and experiences in <span class="highlight"> AI, machine learning, and cyber security</span>.</p>
+                <p>Motivated and accomplished individual with a diverse background in technology, <span class="highlight">particularly in the realm of artificial intelligence</span>. Nearing completion of a Computer Science degree at Reichman University, with a strong foundation from military service in the Cyber and Signal Intelligence unit of the Israeli police. Eager to leverage skills and experiences in <span class="highlight">AI, machine learning, and cyber security</span>.</p>
             </section>
 
             <section>
@@ -199,20 +236,20 @@
             <section>
                 <h2><i class="fas fa-laptop-code icon"></i>Technological Skills</h2>
                 <div class="skills">
-                    <span class="skill highlight">Artificial Intelligence</span>
-                    <span class="skill highlight">Machine Learning</span>
-                    <span class="skill">Python</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">Java</span>
-                    <span class="skill">C#</span>
-                    <span class="skill">SQL</span>
-                    <span class="skill">NoSQL</span>
-                    <span class="skill">Node.js</span>
-                    <span class="skill">Azure</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">Docker</span>
-                    <span class="skill">Prompt Engineering</span>
-                    <span class="skill">OpenAI API</span>
+                    <span class="skill skill-ai">Artificial Intelligence</span>
+                    <span class="skill skill-ai">Machine Learning</span>
+                    <span class="skill skill-ai">Prompt Engineering</span>
+                    <span class="skill skill-ai">Neural network</span>
+                    <span class="skill skill-programming">Python</span>
+                    <span class="skill skill-programming">JavaScript</span>
+                    <span class="skill skill-programming">Java</span>
+                    <span class="skill skill-programming">C#</span>
+                    <span class="skill skill-programming">SQL</span>
+                    <span class="skill skill-programming">NoSQL</span>
+                    <span class="skill skill-programming">Node.js</span>
+                    <span class="skill skill-programming">HTML</span>
+                    <span class="skill skill-other">Azure</span>
+                    <span class="skill skill-other">Docker</span>
                 </div>
                 <p>Applied Machine Learning techniques in practical projects</p>
                 <p>GitHub: <a href="https://github.com/nsharandroidnstudio" target="_blank">nsharandroidnstudio</a></p>
