@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nir Sharon - Data Scientist</title>
+    <title>Nir Sharon - AI Researcher</title>
     <style>
         * {
             margin: 0;
@@ -443,6 +443,122 @@
             line-height: 1.8;
         }
 
+        /* Value Proposition Section - Branch Design */
+        .value-prop {
+            position: relative;
+            padding: 120px 50px;
+            overflow: visible;
+        }
+
+        .branch-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .value-prop-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .branch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .branch-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .branch-item:nth-child(odd) {
+            flex-direction: row;
+            padding-right: 52%;
+        }
+
+        .branch-item:nth-child(even) {
+            flex-direction: row-reverse;
+            padding-left: 52%;
+        }
+
+        .branch-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+
+        .branch-item:nth-child(odd)::before {
+            right: calc(50% - 60px);
+        }
+
+        .branch-item:nth-child(even)::before {
+            left: calc(50% - 60px);
+        }
+
+        .branch-node {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background: var(--dark);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .branch-content {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            flex: 1;
+        }
+
+        .branch-content:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15);
+        }
+
+        .branch-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .branch-title {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .branch-desc {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
         /* Contact Section */
         .contact {
             text-align: center;
@@ -544,6 +660,48 @@
                 flex-direction: column;
                 gap: 20px;
             }
+
+            /* Branch responsive */
+            .branch-container::before {
+                left: 30px;
+            }
+
+            .branch-item:nth-child(odd),
+            .branch-item:nth-child(even) {
+                flex-direction: row;
+                padding: 0 0 0 60px;
+            }
+
+            .branch-item::before {
+                left: 18px !important;
+                right: auto !important;
+                width: 30px;
+            }
+
+            .branch-node {
+                left: 30px;
+            }
+        }
+
+        /* CV Download Button */
+        .btn-download {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-download:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-download svg {
+            width: 18px;
+            height: 18px;
         }
 
         /* Floating particles */
@@ -587,6 +745,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#value">Why Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -598,11 +757,17 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span class="gradient-text">Nir Sharon</span></h1>
-                <p>Data Scientist at Commit | AI  | Cloud </p>
+                <p>AI Researcher at Commit | Agentic AI | LLM Solutions</p>
                 <p style="font-size: 16px; margin-top: -20px;">Building intelligent solutions with AI and cloud technologies</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="Nir_Sharon_CV.pdf" download="Nir_Sharon_CV.pdf" class="btn btn-download">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Download CV
+                    </a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -613,10 +778,10 @@
                         <div class="code-dot"></div>
                     </div>
                     <div class="code-content">
-                        <div class="code-line">class DataScientist:</div>
+                        <div class="code-line">class AIResearcher:</div>
                         <div class="code-line">  def __init__(self):</div>
                         <div class="code-line">    self.name = "Nir Sharon"</div>
-                        <div class="code-line">    self.role = "Data Scientist"</div>
+                        <div class="code-line">    self.focus = "Agentic AI"</div>
                     </div>
                 </div>
             </div>
@@ -627,26 +792,67 @@
         <h2 class="section-title gradient-text">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I'm a Data Scientist at Commit and a Software Developer with a B.Sc in Computer Science from Reichman University. I have a strong passion for machine learning, AI, and cloud computing, constantly exploring new technologies to build innovative solutions.</p>
-                <p style="margin-top: 20px;">My expertise includes creating AI agents, AWS cloud services (Lambda, Bedrock), Docker containerization, and RAG systems. I specialize in deploying scalable AI solutions that solve real-world problems.</p>
-                <p style="margin-top: 20px;">Previously, I selected to served in the Cyber SIGINT Division in the Israeli Police Cyber and Lahav 433 cyber department, where I developed expertise in telecommunications, cyber tools, and coding.</p>
+                <p>I'm an AI Researcher at Commit and Software Developer with a B.Sc. in Computer Science from Reichman University, currently pursuing an MBA at Tel Aviv University.</p>
+                <p style="margin-top: 20px;">I design and build agentic AI systems, LLM-driven solutions that reason, plan, and act across tools, data sources, and modalities. My work focuses on Agentic AI, Agentic RAG, Text-to-SQL, and OCR-based document intelligence, with a strong emphasis on production readiness, scalability, and correctness.</p>
+                <p style="margin-top: 20px;">Previously, I served in the Cyber SIGINT Division in the Israeli Police Cyber and Lahav 433 cyber department, where I developed expertise in telecommunications, cyber tools, and coding.</p>
             </div>
             <div class="skill-grid">
                 <div class="skill-item">
                     <strong>🎓 Education</strong>
-                    <p>B.Sc Computer Science</p>
+                    <p>B.Sc CS | MBA in Progress</p>
                 </div>
                 <div class="skill-item">
                     <strong>💼 Current Role</strong>
-                    <p>Data Scientist at Commit</p>
+                    <p>AI Researcher at Commit</p>
                 </div>
                 <div class="skill-item">
                     <strong>🚀 Focus</strong>
-                    <p>AI Agents & Cloud Solutions</p>
+                    <p>Agentic AI Systems</p>
                 </div>
                 <div class="skill-item">
                     <strong>🔧 Speciality</strong>
-                    <p>GenAI & Machine Learning</p>
+                    <p>LLM Solutions & RAG</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="value" class="value-prop fade-in">
+        <div class="value-prop-title">
+            <h2 class="section-title gradient-text">Why Work With Me</h2>
+            <p style="color: var(--gray); font-size: 18px; max-width: 600px; margin: -40px auto 0;">Bridging the gap between cutting-edge AI and real business impact</p>
+        </div>
+        <div class="branch-container">
+            <div class="branch-item">
+                <div class="branch-node"></div>
+                <div class="branch-content">
+                    <span class="branch-icon">🎯</span>
+                    <h3 class="branch-title">End-to-End AI Solutions</h3>
+                    <p class="branch-desc">From concept to production - I don't just build models, I deploy complete systems. Whether it's computer vision, NLP, or agentic AI, I deliver solutions that work at scale in the real world.</p>
+                </div>
+            </div>
+            <div class="branch-item">
+                <div class="branch-node"></div>
+                <div class="branch-content">
+                    <span class="branch-icon">⚡</span>
+                    <h3 class="branch-title">Speed Meets Precision</h3>
+                    <p class="branch-desc">Fast iteration without sacrificing quality. My Smart OCR system processes bank documents in seconds with high accuracy. I optimize for both performance and reliability.</p>
+                </div>
+            </div>
+            <div class="branch-item">
+                <div class="branch-node"></div>
+                <div class="branch-content">
+                    <span class="branch-icon">🔗</span>
+                    <h3 class="branch-title">Cloud-Native Architecture</h3>
+                    <p class="branch-desc">Expert in AWS ecosystem - Lambda, Bedrock, SageMaker, Step Functions. I build serverless, scalable architectures that grow with your business while keeping costs optimized.</p>
+                </div>
+            </div>
+            <div class="branch-item">
+                <div class="branch-node"></div>
+                <div class="branch-content">
+                    <span class="branch-icon">🤖</span>
+                    <h3 class="branch-title">Agentic AI Pioneer</h3>
+                    <p class="branch-desc">Specializing in autonomous AI agents that reason, plan, and execute complex tasks. From Text-to-SQL to multi-agent systems, I build AI that thinks and acts intelligently.</p>
                 </div>
             </div>
         </div>
@@ -675,10 +881,9 @@
                 <h3 class="skill-title">Cloud & DevOps</h3>
                 <ul class="skill-list">
                     <li>AWS Lambda Functions</li>
-                    <li>AWS Bedrock & SageMaker</li>
-                    <li>Step Functions & S3</li>
+                    <li>AWS Bedrock</li>
+                    <li>S3 & API Gateway</li>
                     <li>Docker Containerization</li>
-                    <li>API Gateway</li>
                 </ul>
             </div>
             <div class="skill-card">
@@ -698,51 +903,68 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">AI Agent Air Conditioner Classifier</h3>
+                    <h3 class="project-title">My Tadiran - AI Recognition</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">YOLO</span>
-                        <span class="tech-tag">GenAI</span>
-                        <span class="tech-tag">AWS Lambda</span>
-                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">AWS</span>
                     </div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Trained a YOLO model to detect air conditioners in images and videos, integrated with an LLM to classify detected units based on visual attributes. Deployed using AWS Lambda, API Gateway, and Docker for scalable, real-time processing.
+                        Built the AI-based AC model recognition feature for My Tadiran app - winner of the 2025 Israeli Marketing Association Innovation Award. The system identifies any AC unit in seconds, dramatically improving setup speed and accuracy for thousands of users across Israel.
                     </p>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">Avatar AI Chat</h3>
+                    <h3 class="project-title">Smart OCR - Bank Document Extraction</h3>
                     <div class="project-tech">
+                        <span class="tech-tag">OCR</span>
                         <span class="tech-tag">GenAI</span>
-                        <span class="tech-tag">D-ID API</span>
+                        <span class="tech-tag">Document AI</span>
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">CSV Analysis</span>
                     </div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Developed an educational AI agent powered by GenAI, integrated with D-ID API to create interactive, human-like avatars that answer user questions and analyze uploaded CSV data in real-time.
+                        Developed a high-speed, high-accuracy document processing system that extracts critical details from bank documents. Combines advanced OCR with GenAI to intelligently parse and validate financial data, reducing manual processing time significantly.
                     </p>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">ExcelAI: Excel Analysis Agent</h3>
+                    <h3 class="project-title">Text-to-SQL Agent</h3>
                     <div class="project-tech">
                         <span class="tech-tag">LLM</span>
                         <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">GenAI</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Agents</span>
                     </div>
                 </div>
                 <div class="project-content">
                     <p class="project-description">
-                        Created an LLM-to-SQL AI agent that interprets complex user questions over large Excel files and automatically generates accurate SQL and Pandas queries for intelligent data analysis.
+                        Created an intelligent AI agent that converts natural language questions into precise SQL queries. Enables non-technical users to query complex databases using plain English, with automatic query optimization and error handling.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Agentic RAG Platform</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">AI Agents</span>
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">Knowledge Base</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built production-grade agentic RAG systems with knowledge base integration. Not a POC, fully deployed solutions that handle real traffic, with proper error handling, monitoring, and scalability built in from day one.
                     </p>
                 </div>
             </div>
